@@ -1,0 +1,20 @@
+1.
+ SELECT full_name, birth_date FROM persons
+ WHERE id IN (SELECT person_id FROM staff 
+ WHERE movie_id = (SELECT id FROM movies 
+ WHERE title IN ('Titanic')))
+ AND birth_date > '1971-01-01' 
+ AND full_name is not null 
+ 
+ 2.
+ SELECT title FROM movies 
+ WHERE id IN (SELECT movie_id FROM staff 
+ WHERE person_id IN (SELECT id FROM persons 
+ WHERE full_name LIKE 'Leonardo%'))
+ 
+ 3.
+ SELECT title, MAX(oscar_winner), country FROM movies
+ WHERE oscar_winner > 0
+ group by country 
+ 
+ 

@@ -1,0 +1,23 @@
+ 1.
+ SELECT* FROM movies
+ WHERE title= '%Movie'
+ 
+ 2.
+ SELECT* FROM movies
+ WHERE lang= 'English'
+ AND oscar_winner > 1
+ 
+ 3.
+ SELECT title, duration, oscar_winner FROM movies
+ WHERE oscar_winner > 5
+ ORDER BY duration DESC
+ 
+ 4.
+ SELECT title, revenue, oscar_nominee FROM movies
+ WHERE revenue < 100
+ AND oscar_nominee = 11
+ 
+ 5.
+ SELECT title, oscar_winner, oscar_nominee FROM movies
+ WHERE oscar_winner = oscar_nominee
+ AND oscar_nominee > 0
